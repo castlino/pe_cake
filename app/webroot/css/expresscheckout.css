@@ -1,0 +1,193 @@
+/*
+    Document   : expresscheckout
+    Created on : May 18, 2010, 11:48:30 AM
+    Author     : lino
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.telephone-text { width: 160px; height: 18px; background: #cc0000; border: 1px solid #708494; color: #c0c0c0; font-family: Tahoma; font-weight: bold; font-size: 13px; margin-right: 4px; padding: 4px; vertical-align: middle; }
+.radius { border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; }
+.radiusWide { border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; }
+#paymentcountdownDiv {
+            width:      742px;
+            height:     120px;
+            margin: auto;
+            vertical-align: middle;
+}
+#countdownNoteDiv{
+            width:      250px;
+            height:     100px;
+            margin-left: 200px;
+            background: transparent url(../img/countdownnote.png) no-repeat top left;
+}
+
+#confMain {
+            width:      742px;
+            height:     446px;
+            background: transparent url(../img/redbigbg.png) no-repeat top left;
+            /* border: 1px solid #708494;  */
+            color: black;
+            font-family: Tahoma;
+            font-size: 13px;
+            margin: auto;
+            vertical-align: middle;
+}
+
+.infoDiv{
+
+    width: 330px;
+    height: 160px;
+    background: transparent; /* #FFFFFF */
+    margin-top:  10px;
+    position: relative;
+    border: 3px thin blue;
+    float: left;
+    padding: 10px 10px 0 0px;
+
+}
+.infoDiv label{
+    float: left;
+    position: relative;
+    font-family: Tahoma;
+    font-weight: bold;
+    left: 40px;
+}
+
+.noteDiv{
+
+    width: 730px;
+    height: 50px;
+    background: transparent; /* #FFFFFF */
+    margin-top:  10px;
+    position: relative;
+    border: 3px thin blue;
+    float: left;
+    padding: 10px 10px 0 0px;
+    /* border: 1px solid #708494; */
+
+}
+.noteDiv label{
+    float: left;
+    color: #dddddd;
+    position: relative;
+    font-family: Tahoma;
+    font-weight: normal;
+    padding: 0 60px 0 60px;;
+}
+
+.noteDiv .highlight{
+    color: #f4f49b;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+/*
+.details{
+    width: 220px;
+    height: 120px;
+    background: #eeeeee;
+    float: left;
+    position: relative;
+    left: 60px;
+    text-align: left;
+    padding-left: 10px;
+}
+*/
+.details{
+    width: 290px;
+    height: 150px;
+    background: transparent url(../img/whiteboxpointupsh3.png) no-repeat top left;
+    padding-top: 20px;
+    margin-left: 5px;
+    float: left;
+    position: relative;
+    left: 40px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.iLabel{
+    position: relative;
+    font-family: Tahoma;
+    color: #222222;
+    font-weight: bold;
+}
+.details .iValue{
+    position: relative;
+    font-family: Tahoma;
+    padding-left: 10px;
+    width: 240px;
+    font-style: italic;
+}
+.details .iAmtValue{
+    position: relative;
+    font-family: Tahoma;
+    float: right;
+    padding-right: 40px;
+
+}
+#cancelDiv{
+
+    height: 50px;
+    width: 140px;
+    float: left;
+    margin: 10px 180px;
+    background: transparent url(../img/redbuttonpointup.png) no-repeat top;
+text-align: center;
+    /* border: 3px solid blue; */
+}
+#cancelDiv a{
+    text-decoration: none;
+    color: #FFFFFF;
+    position: relative;
+    top: 15px;
+    background: transparent;
+}
+
+#submitDiv{
+    
+    height: 50px;
+    width: 140px;
+    float: right;
+    margin: 10px 180px;
+    background: transparent url(../img/redbuttonpointup.png) no-repeat top;
+text-align: center;
+    /* border: 3px solid blue; */
+}
+
+#submitDiv a{
+    text-decoration: none;
+    color: #FFFFFF;
+    position: relative;
+    top: 15px;
+    background: transparent;
+}
+
+
+#thankYouDiv {
+    height: 50px;
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+    top: 150px;
+    background: transparent url(../img/redbuttonpointdown.png) no-repeat top;
+    /* border: 3px solid blue; */
+}
+#thankYouDiv p{
+    padding-top: 7px;
+    color: #FFFFFF;
+}
+
+#PayCompDiv{
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+

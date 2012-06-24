@@ -1,0 +1,15 @@
+
+
+
+dd{
+    margin-left: 250px;
+    float: left;
+    position: absolute;
+}
+
+dd.altrow {
+	background: #f4f4f4;
+}
+dt.altrow {
+	background: #f4f4f4;
+}

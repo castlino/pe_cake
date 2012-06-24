@@ -1,0 +1,143 @@
+CREATE TABLE aus_posts(
+	id INT(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Pcode INT(10),
+	Locality VARCHAR(100),
+	State VARCHAR(100),
+	Comments VARCHAR(100),
+	DeliveryOffice VARCHAR(100),
+	PresortIndicator INT(10),
+	ParcelZone VARCHAR(10),
+	BSPnumber INT(10),
+	BSPname VARCHAR(100),
+	Category VARCHAR(100),
+	rate_from_sydney FLOAT,
+	per_kilo FLOAT
+);
+
+
+CREATE TABLE customers(
+	id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	paypal_payerid VARCHAR(255),
+	last_name VARCHAR(255),
+	first_name VARCHAR(255),
+	company_name VARCHAR(255),
+	unit_number VARCHAR(255),
+	street_address1 VARCHAR(255),
+	street_address2 VARCHAR(255),
+	suburb VARCHAR(255),
+	postcode VARCHAR(255),
+	state VARCHAR(255),
+	country VARCHAR(255),
+	email VARCHAR(255),
+	created DATETIME,
+	modified DATETIME
+);
+
+CREATE TABLE products(
+	id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255),
+	stock INT(11),
+	price FLOAT,
+	weight FLOAT,
+	description VARCHAR(255),
+	model VARCHAR(255),
+	manufacturer VARCHAR(255),
+	imageview_1 VARCHAR(255),
+	imageview_2 VARCHAR(255),
+	imageview_3 VARCHAR(255),
+	imageview_4 VARCHAR(255),
+	imageview_5 VARCHAR(255),
+	created DATETIME,
+	modified DATETIME
+);
+	
+CREATE TABLE orders(
+	id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	customer_id INT(11),
+	lightspeed_orderid INT(11),
+	shipping_company_name VARCHAR(255),
+	shipping_name VARCHAR(255),
+	shipping_street_address VARCHAR(255),
+	shipping_street_address VARCHAR(255),
+	shipping_suburb VARCHAR(255),
+	shipping_postcode VARCHAR(255),
+	shipping_state VARCHAR(255),
+	shipping_country VARCHAR(255),
+	shipping_email VARCHAR(255),
+	shipping_contact_number VARCHAR(255),
+	shipping_method VARCHAR(255),
+	payment_method VARCHAR(255),
+	currency VARCHAR(255),
+	ip_address VARCHAR(255),
+	paypal_firstname VARCHAR(255),
+	paypal_lastname VARCHAR(255),
+	paypal_transid VARCHAR(255),
+	paypal_payerid VARCHAR(255),
+	paypal_payerstatus VARCHAR(255),
+	paypal_transactiontype VARCHAR(255),
+	paypal_paymenttype VARCHAR(255),
+	amount_paid FLOAT,
+	is_packed INT(4),
+	is_dispatched INT(4),
+	invoice_number VARCHAR(255),
+	tracking_code VARCHAR(255),
+	created DATETIME,
+	modified DATETIME
+);
+
+CREATE TABLE orders_products(
+	id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	order_id INT(11) NOT NULL,
+	product_id INT(11) NOT NULL,
+	quantity INT(10),
+	created DATETIME,
+	modified DATETIME
+);
+
+CREATE TABLE users (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password CHAR(40) NOT NULL,
+    group_id INT(11) NOT NULL,
+    created DATETIME,
+    modified DATETIME
+);
+
+ 
+CREATE TABLE groups (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    created DATETIME,
+    modified DATETIME
+);
+
+alter table aus_posts add column rate_from_sydney float
+alter table aus_posts add column per_kilo float after rate_from_sydney
+
+alter table products add column weight float not null after price
+
+alter table orders_products add column quantity INT(10) after product_id
+alter table orders add column shipping_contact_number varchar(32) after shipping_email
+
+alter table customers add column paypal_payerid VARCHAR(255) after id
+alter table orders add column amount_paid float after paypal_paymenttype
+
+alter table products add column image_small VARCHAR(255) after manufacturer
+alter table products add column image_big VARCHAR(255) after image_small
+alter table products add column image_biggest VARCHAR(255) after image_big
+alter table products add column date_to_expire datetime after is_active
+
+// Data loss correction queries.
+SELECT O.id, O.shipping_name, OP.* FROM orders as O
+LEFT JOIN orders_products as OP ON O.id=OP.order_id
+WHERE O.id=1037
+// Insert/patch to appropriate orders_products.
+INSERT INTO orders_products VALUES(NULL, 947, 29, 1, NOW(), NOW())
+
+
+alter table products add column stock_fb int(11) after stock;
+alter table products add column stock_to_go_fb int(11) after stock_to_go;
+alter table orders add column is_facebook int(4) after customer_id;
+
+alter table products add column stock_sell_target int(11) after stock_gone;
+alter table products add column stock_sell_target_fb int(11) after stock_sell_target;

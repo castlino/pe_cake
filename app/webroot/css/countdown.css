@@ -1,0 +1,118 @@
+/*
+    Document   : mycdt
+    Created on : May 18, 2010, 11:48:30 AM
+    Author     : lino
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+/*
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma;
+}
+*/
+
+@font-face {
+   font-family: DigitalLCD;
+   src: url(../css/fonts/digitalN.ttf);
+}
+
+#countdown_dashboard {
+	height: 76px;
+	margin-left: 0px;
+        width: 230px;
+        float: right;
+        position: relative;
+        /* border: 3px solid yellow; */
+}
+
+.dash {
+	width: 50px;
+	height: 60px;
+	background: transparent url('../images/dash.png') 0 0 no-repeat;
+	float: left;
+	margin-left: 2px;
+        padding: 15px 0 0 0;
+	position: relative;
+	color: #333;
+}
+.days_dash{
+	width: 50px;
+}
+
+.weeks_dash {
+	background: transparent url('../images/dark_weeks_dashs.png') 0 0 no-repeat;
+}
+
+.days_dash {
+        clear: left;
+	background: transparent url('../images/dark_days_dashs.png') 0 0 no-repeat;
+        padding-right: 30px;
+}
+
+.hours_dash {
+        /* clear: left; */
+	background: transparent url('../images/dark_hours_dashs.png') 0 0 no-repeat;
+        width: 75px;
+        
+}
+
+
+.minutes_dash {
+	background: transparent url('../images/dark_minutes_dashs.png') 0 0 no-repeat;
+}
+
+.seconds_dash {
+	background: transparent url('../images/dark_seconds_dashs.png') 0 0 no-repeat;
+}
+
+.dash .digit {
+	font-family: Century Gothic, sans-serif;
+        font-size: 3em;
+        color: #333333;
+	float: left;
+	width: 25px;
+	text-align: center;
+	position: relative;
+
+}
+
+.hours_dash .digit {
+    float: right;
+}
+.separator{
+	width: 10px;
+	height: 60px;
+	float: left;
+	margin-left: 2px;
+	padding: 12px 0 0 0;
+	position: relative;
+	color: #333;
+}
+.separator span{
+        font-family: Century Gothic, sans-serif;
+        color: black;
+        font-size: 3em;
+        text-align: left;
+}
+.dash_title {
+	display: none;
+        float: left;
+        font-family: Tahoma;
+}
+
+.dev_comment {
+	clear: left;
+	font-size: 14pt;
+	color: #fff;
+	text-align: center;
+	padding-top: 10px;
+	margin: 20px 10px;
+}

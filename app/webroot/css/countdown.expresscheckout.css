@@ -1,0 +1,88 @@
+/*
+    Document   : mycdt
+    Created on : May 18, 2010, 11:48:30 AM
+    Author     : lino
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+/*
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma;
+}
+*/
+
+@font-face {
+   font-family: DigitalLCD;
+   src: url(../css/fonts/digitalN.ttf);
+}
+
+#countdown_dashboard {
+	height: 65px;
+        width: 190px;
+        float: left;
+        position: relative;
+        background:  transparent url(/img/paymentcountdownbg.png) no-repeat top left;
+        text-align: center;
+        margin-top: 30px;
+        /* border: 3px solid yellow; */
+}
+
+#timeLabel{
+        height: 10px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        margin-top: 6px;
+}
+
+.dash {
+	width: 36px;
+	height: 30px;
+	float: left;
+	margin-left: 4px;
+        margin-top: 15px;
+	position: relative;
+        /* border: 1px solid yellow; */
+}
+
+.minutes_dash{
+        margin-left: 25px;
+}
+
+.dash .digit {
+	font-family: Century Gothic, sans-serif;
+        font-size: 2em;
+        color: #EFEFEF;
+	float: left;
+	width: 18px;
+	text-align: center;
+	position: relative;
+
+}
+
+.separator {
+	width: 10px;
+	height: 30px;
+	float: left;
+	margin-left: 2px;
+	position: relative;
+
+}
+.separator span{
+    	font-family: Century Gothic, sans-serif;
+        font-size: 2em;
+        color: #EFEFEF;
+        float: left;
+        width: 10px;
+        text-align: center;
+        position: relative;
+}
+
